@@ -5,7 +5,6 @@ use crate::PASSWORD_PATH;
 use input_wrapper::{get_input,get_input_verbose);
 use decrypt::decrypt_text;
 use password_file::get_file_as_byte_vec;
-use simple_dmenu::dmenu;
 use crate::Entry;
 use std::{thread, time};
 use clipboard::ClipboardProvider;
@@ -13,7 +12,7 @@ use clipboard::ClipboardContext;
 use crate::make_db_safe::decode;
 use csv::ReaderBuilder;
 
-//allows the user to select an entry based on it's title using dmenu, then prints it's username and copies the password to the clipboard. Only works on Xorg
+//allows the user to select an entry based on it's title using a loop, then prints it's username and copies the password to the clipboard. Only works on Xorg
 pub fn get_entry() {
 
 println!("please type in your db password: \n");

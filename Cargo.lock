@@ -474,12 +474,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bb7d1f0d3021d347a83e556fc4683dea2ea09d87bccdf88ff5c12545d89d5efb"
 
 [[package]]
-name = "simple-dmenu"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2f392360283341235b298e79f0360bd924db6e6ad1e0964cbf4c43ea79c237eb"
-
-[[package]]
 name = "spin"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -497,7 +491,6 @@ dependencies = [
  "rand",
  "random",
  "rpassword",
- "simple-dmenu",
  "tindercrypt",
 ]
 

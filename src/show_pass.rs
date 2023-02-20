@@ -2,7 +2,7 @@ use crate::input_wrapper;
 use crate::decrypt;
 use crate::password_file;
 use crate::PASSWORD_PATH;
-use input_wrapper::{get_input,get_input_verbose);
+use input_wrapper::{get_input,get_input_verbose};
 use decrypt::decrypt_text;
 use password_file::get_file_as_byte_vec;
 use crate::Entry;
@@ -34,13 +34,15 @@ for result in rdr.records() {
     vec_of_entries.push(new_entry);
 }
 
-let vec_of_usernames: Vec<&str> = vec_of_entries.iter().map(|ent| ent.title.as_str()).collect();
+let clone_vec = vec_of_entries.clone();
+let vec_of_usernames: Vec<&str> = clone_vec.iter().map(|ent| ent.title.as_str()).collect();
+
 for (i, username) in vec_of_usernames.iter().enumerate() {
     println!("\ntype {} to get password and username for {}\n",i,username);
 }
 
 let user_selection = get_input_verbose();
-let output = vec_of_usernames[user_selection.parse().unwrap()];
+let output: &str = vec_of_usernames[user_selection.parse::<usize>().unwrap()];
 
 let output_user: Vec<Entry> = vec_of_entries
         .into_iter()

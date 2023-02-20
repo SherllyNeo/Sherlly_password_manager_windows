@@ -2,7 +2,6 @@ extern crate bincode;
 extern crate dirs;
 extern crate clipboard;
 extern crate csv;
-extern crate simple_dmenu;
 mod encrypt;
 mod decrypt;
 mod password_file;
@@ -26,7 +25,7 @@ extern crate lazy_static;
 
 const PASSWORD_PATH: &str = "/home/sherlly/usb/password.db";
 
-#[derive(Debug)]
+#[derive(Debug,Clone)]
 struct Entry {
     title: String,
     username: String,
